@@ -12,7 +12,7 @@ after_success:
   - docker build -t stfdmv/multi-worker ./worker
   #Log in to docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
-  - docker push stfdmv/mutli-client
+  - docker push stfdmv/multi-client
   - docker push stfdmv/multi-nginx
   - docker push stfdmv/multi-server
-  - docker push stfdmv/mutli-worker
+  - docker push stfdmv/multi-worker
