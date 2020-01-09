@@ -16,3 +16,16 @@ after_success:
   - docker push stfdmv/multi-nginx
   - docker push stfdmv/multi-server
   - docker push stfdmv/multi-worker
+deploy:
+  provider: elasticbeanstalk
+  region: us-east-2
+  app: mutli-docker
+  env: MultiDocker-env
+  bucker-name: elasticbeanstalk-us-east-2-865236295924
+  bucket-path: docker-mutli
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key:
+    secure: $AWS_SECRET_KEY
+
